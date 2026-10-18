@@ -3,88 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produto Incrível - Página de Vendas</title>
+  <title>Dark Mode Demo</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>Transforme sua vida com o Produto Incrível</h1>
-      <p>A solução definitiva para seus problemas. Comece hoje mesmo!</p>
-      <a href="#pricing" class="btn btn-primary">Comece Agora</a>
-    </div>
-  </header>
-
-  <section class="features">
-    <div class="container">
-      <h2>Por que escolher nosso produto?</h2>
-      <div class="features-grid">
-        <div class="feature">
-          <div class="feature-icon">🚀</div>
-          <h3>Rápido e Eficiente</h3>
-          <p>Resultados imediatos com nossa tecnologia de ponta.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🔒</div>
-          <h3>Seguro e Confiável</h3>
-          <p>Seus dados estão protegidos com criptografia de última geração.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">💡</div>
-          <h3>Fácil de Usar</h3>
-          <p>Interface intuitiva que qualquer pessoa pode dominar em minutos.</p>
-        </div>
+  <div class="container">
+    <header>
+      <h1>Meu Projeto</h1>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">
+        🌙 Modo Escuro
+      </button>
+    </header>
+    <main>
+      <div class="card">
+        <h2>Bem-vindo</h2>
+        <p>Este é um exemplo de página com suporte a dark mode usando CSS variables. Clique no botão acima para alternar entre os temas claro e escuro. Sua preferência é salva automaticamente.</p>
       </div>
-    </div>
-  </section>
-
-  <section id="pricing" class="pricing">
-    <div class="container">
-      <h2>Planos e Preços</h2>
-      <div class="pricing-grid">
-        <div class="plan">
-          <h3>Básico</h3>
-          <div class="price">R$ 29<span>/mês</span></div>
-          <ul>
-            <li>1 usuário</li>
-            <li>5 GB de armazenamento</li>
-            <li>Suporte por email</li>
-          </ul>
-          <button class="btn btn-secondary buy-btn" data-plan="Básico">Assinar</button>
-        </div>
-        <div class="plan popular">
-          <div class="badge">Mais Popular</div>
-          <h3>Profissional</h3>
-          <div class="price">R$ 59<span>/mês</span></div>
-          <ul>
-            <li>5 usuários</li>
-            <li>50 GB de armazenamento</li>
-            <li>Suporte prioritário</li>
-            <li>Acesso a todas as funcionalidades</li>
-          </ul>
-          <button class="btn btn-primary buy-btn" data-plan="Profissional">Assinar</button>
-        </div>
-        <div class="plan">
-          <h3>Empresarial</h3>
-          <div class="price">R$ 99<span>/mês</span></div>
-          <ul>
-            <li>Usuários ilimitados</li>
-            <li>Armazenamento ilimitado</li>
-            <li>Suporte 24/7</li>
-            <li>Gerente de conta dedicado</li>
-          </ul>
-          <button class="btn btn-secondary buy-btn" data-plan="Empresarial">Assinar</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Produto Incrível. Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
+    </main>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
