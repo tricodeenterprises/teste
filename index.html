@@ -3,87 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produto Incrível - Página de Vendas</title>
+  <title>Sistema de Vendas</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>Transforme sua vida com o Produto Incrível</h1>
-      <p>A solução definitiva para seus problemas. Comece hoje mesmo!</p>
-      <a href="#pricing" class="btn btn-primary">Comece Agora</a>
-    </div>
+  <header>
+    <h1>Sistema de Vendas</h1>
+    <nav>
+      <button id="tab-produtos" class="tab active">Produtos</button>
+      <button id="tab-vendas" class="tab">Vendas</button>
+      <button id="tab-historico" class="tab">Histórico</button>
+    </nav>
   </header>
 
-  <section class="features">
-    <div class="container">
-      <h2>Por que escolher nosso produto?</h2>
-      <div class="features-grid">
-        <div class="feature">
-          <div class="feature-icon">🚀</div>
-          <h3>Rápido e Eficiente</h3>
-          <p>Resultados imediatos com nossa tecnologia de ponta.</p>
+  <main>
+    <!-- Seção Produtos -->
+    <section id="section-produtos" class="section active">
+      <h2>Cadastro de Produtos</h2>
+      <form id="form-produto">
+        <input type="text" id="produto-nome" placeholder="Nome do produto" required>
+        <input type="number" id="produto-preco" placeholder="Preço" step="0.01" min="0.01" required>
+        <input type="number" id="produto-estoque" placeholder="Estoque" min="0" required>
+        <button type="submit">Adicionar Produto</button>
+      </form>
+      <div id="lista-produtos"></div>
+    </section>
+
+    <!-- Seção Vendas -->
+    <section id="section-vendas" class="section">
+      <h2>Nova Venda</h2>
+      <div class="venda-container">
+        <div class="produtos-disponiveis">
+          <h3>Produtos Disponíveis</h3>
+          <div id="produtos-venda"></div>
         </div>
-        <div class="feature">
-          <div class="feature-icon">🔒</div>
-          <h3>Seguro e Confiável</h3>
-          <p>Seus dados estão protegidos com criptografia de última geração.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">💡</div>
-          <h3>Fácil de Usar</h3>
-          <p>Interface intuitiva que qualquer pessoa pode dominar em minutos.</p>
+        <div class="carrinho">
+          <h3>Carrinho</h3>
+          <div id="carrinho-itens"></div>
+          <div class="total">Total: R$ <span id="carrinho-total">0,00</span></div>
+          <button id="finalizar-venda" disabled>Finalizar Venda</button>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="pricing" class="pricing">
-    <div class="container">
-      <h2>Planos e Preços</h2>
-      <div class="pricing-grid">
-        <div class="plan">
-          <h3>Básico</h3>
-          <div class="price">R$ 29<span>/mês</span></div>
-          <ul>
-            <li>1 usuário</li>
-            <li>5 GB de armazenamento</li>
-            <li>Suporte por email</li>
-          </ul>
-          <button class="btn btn-secondary buy-btn" data-plan="Básico">Assinar</button>
-        </div>
-        <div class="plan popular">
-          <div class="badge">Mais Popular</div>
-          <h3>Profissional</h3>
-          <div class="price">R$ 59<span>/mês</span></div>
-          <ul>
-            <li>5 usuários</li>
-            <li>50 GB de armazenamento</li>
-            <li>Suporte prioritário</li>
-            <li>Acesso a todas as funcionalidades</li>
-          </ul>
-          <button class="btn btn-primary buy-btn" data-plan="Profissional">Assinar</button>
-        </div>
-        <div class="plan">
-          <h3>Empresarial</h3>
-          <div class="price">R$ 99<span>/mês</span></div>
-          <ul>
-            <li>Usuários ilimitados</li>
-            <li>Armazenamento ilimitado</li>
-            <li>Suporte 24/7</li>
-            <li>Gerente de conta dedicado</li>
-          </ul>
-          <button class="btn btn-secondary buy-btn" data-plan="Empresarial">Assinar</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Produto Incrível. Todos os direitos reservados.</p>
-    </div>
-  </footer>
+    <!-- Seção Histórico -->
+    <section id="section-historico" class="section">
+      <h2>Histórico de Vendas</h2>
+      <div id="historico-vendas"></div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
