@@ -1,24 +1,33 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
+const THEME_KEY = 'theme';
 
-  // Buy buttons
-  const buyButtons = document.querySelectorAll('.buy-btn');
-  buyButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const plan = this.getAttribute('data-plan');
-      alert(`Você selecionou o plano ${plan}. Em breve entraremos em contato!`);
-    });
-  });
+function getPreferredTheme() {
+  const stored = localStorage.getItem(THEME_KEY);
+  if (stored === 'light' || stored === 'dark') {
+    return stored;
+  }
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  const toggle = document.getElementById('theme-toggle');
+  if (toggle) {
+    toggle.textContent = theme === 'dark' ? '☀️ Modo Claro' : '🌙 Modo Escuro';
+    toggle.setAttribute('aria-label', theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro');
+  }
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme') || 'light';
+  const next = current === 'dark' ? 'light' : 'dark';
+  localStorage.setItem(THEME_KEY, next);
+  applyTheme(next);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(getPreferredTheme());
+  const toggle = document.getElementById('theme-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', toggleTheme);
+  }
 });
